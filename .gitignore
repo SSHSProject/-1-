@@ -1,0 +1,10 @@
+# 파이썬 컴파일 캐시 (소스가 아니므로 저장소에 올리지 않는다)
+__pycache__/
+*.pyc
+
+# macOS 시스템 파일
+.DS_Store
+
+# Claude Code 로컬 설정/자동동기화 보조 파일
+.claude/
+*.log
