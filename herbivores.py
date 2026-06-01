@@ -158,7 +158,7 @@ class Elephant(Herbivore):
         super().__init__(place, speed=1.8, hp=240, ap=30, rsp=0.12, rp_rate=0.32)
         self.stomp_power = 110      # 밟는 범위(계획서 속성)
         self.stun_time = 50         # 포식자를 멈추는 시간(틱)(계획서 속성)
-        self.stomp_rate = 55        # (밸런스용 추가) 밟기 쿨타임 — 더 자주 방어
+        self.stomp_rate = 110        # (밸런스용 추가) 밟기 쿨타임 — 더 자주 방어
         self.stomp_cd = 0
         self.tree_rate = 200        # 나무 투척 쿨타임(계획서 속성) — 나무 고갈을 막기 위해 길게
         self.tree_cd = 0
