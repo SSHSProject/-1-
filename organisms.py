@@ -7,7 +7,7 @@
       이 클래스들을 상속(extends)받아 자기만의 능력을 덧붙인다.
 
 상속 구조(계획서 그대로):
-      Entity(엔진용 최상위)
+      Entity(엔진용 최상위)ve
         ├─ Animal(animal)            ← speed, hp, ap, rsp, place, hunger / move, isalive, eat
         │     ├─ Herbivore(herbivores) ← rp_rate / reproduce
         │     └─ Carnivore(carnivores) ← energy / attack
