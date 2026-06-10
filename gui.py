@@ -215,10 +215,16 @@ class EcosystemApp:
 
         self.lbl_log.config(text="\n".join(self.world.events) or "(아직 조용한 초원...)")
 
+    # 한글 입력기(IME)가 켜져 있으면 D 키가 "d" 가 아니라 두벌식 자모 "ㅇ" 으로 들어와
+    # 조작이 안 먹는다. 조작키에 해당하는 자모를 영문키로 되돌려 한/영 상태와 무관하게 동작하게 한다.
+    _HANGUL_KEYS = {"ㅇ": "d", "ㄱ": "r", "ㅂ": "q"}
+
     # ── 키 입력 처리 ─────────────────────────────────────
     def _on_key(self, event):
         """키보드 조작: D=재난, Space=일시정지, R=재시작, Q/Esc=종료."""
         k = event.keysym.lower()
+        # keysym 또는 입력문자(char)가 한글 자모면 대응하는 영문키로 환산한다.
+        k = self._HANGUL_KEYS.get(k, self._HANGUL_KEYS.get(event.char, k))
         if k == "d":
             self.world.trigger_disaster()
         elif k == "space":
